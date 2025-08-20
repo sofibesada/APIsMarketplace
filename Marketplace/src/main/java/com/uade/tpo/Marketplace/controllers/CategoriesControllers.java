@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uade.tpo.Marketplace.entity.Category;
-import com.uade.tpo.Marketplace.entity.CategoryRequest;
+import com.uade.tpo.Marketplace.entity.dto.CategoryRequest;
 import com.uade.tpo.Marketplace.service.CategoryService;
 import com.uade.tpo.Marketplace.exceptions.CategoryDuplicateException;
 import java.util.ArrayList;

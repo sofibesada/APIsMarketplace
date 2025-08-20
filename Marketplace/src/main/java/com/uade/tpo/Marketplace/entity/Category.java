@@ -14,8 +14,7 @@ import lombok.Data;
 //@Builder //nos permite crear objetos dentro del repositorio
 @Entity //entidad que va a tener que persistir en la base de datos, le digo agarra tal objeto, mapealo y transformalo en tabla en mi bd
 public class Category { //tabla
-
-
+    
     public Category(){}
 
     public Category (String description) {
