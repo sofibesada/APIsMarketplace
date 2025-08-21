@@ -31,10 +31,10 @@ public class Product {
     private int stock;
     
     @ManyToOne 
-    @JoinColumn(name = "id_category", nullable = false)
+    @JoinColumn(name = "category", nullable = false)
     private Category category;
 
-    @OneToMany(mappedBy = "orderDetail")
+    @OneToMany(mappedBy = "product")
     private List<OrderDetail> orderDetail;
 
 }

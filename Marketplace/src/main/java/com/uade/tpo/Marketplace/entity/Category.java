@@ -34,7 +34,7 @@ public class Category { //tabla
     @Column
     private String description; //columna2
 
-    @OneToMany (mappedBy = "products")
-    List<Product> products;
+    @OneToMany (mappedBy = "category")
+    private List<Product> products;
 
 }

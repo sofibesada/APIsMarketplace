@@ -26,11 +26,11 @@ public class Payment {
     private double count;
 
     @OneToOne
-    @JoinColumn(name = "id_order", nullable= false)
+    @JoinColumn(name = "order_id", nullable= false)
     private Order order;
 
     @OneToOne
-    @JoinColumn(name = "id_payment_method", nullable = false)
+    @JoinColumn(name = "payment_method_id", nullable = false)
     private PaymentMethod paymentMethod;
     
 }

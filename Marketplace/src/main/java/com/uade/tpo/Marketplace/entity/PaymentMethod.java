@@ -23,6 +23,6 @@ public class PaymentMethod {
     @Column 
     private String details;
 
-    @OneToOne (mappedBy = "payment")
+    @OneToOne (mappedBy = "paymentMethod")
     private Payment payment;
 }

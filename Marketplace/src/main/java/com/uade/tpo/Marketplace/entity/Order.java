@@ -18,12 +18,17 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "orders")
  //forma de cambiar el nombre de la tabla (ya que order tabla reservada de mysql)
 public class Order {
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
+    private String name;
+    
     @Column 
     private LocalDateTime date;
     @Column
@@ -32,13 +37,13 @@ public class Order {
     private String state;
 
     @ManyToOne //join entre las dos--> esta orden q es de 1 unico usuario se relaciona con esta orden
-    @JoinColumn(name = "id_user", nullable = false) //si o si tiene q haber user_id sino ordern no se persiste (para eso nullable q es un booleano) 
+    @JoinColumn(name = "user_id", nullable = false) //si o si tiene q haber user_id sino ordern no se persiste (para eso nullable q es un booleano) 
     private User user;
 
-    @OneToOne(mappedBy = "payment")
+    @OneToOne(mappedBy = "order")
     private Payment payment;
 
-    @OneToMany(mappedBy = "orderDetail")
+    @OneToMany(mappedBy = "order")
     private List<OrderDetail> orderDetail;
 
 
