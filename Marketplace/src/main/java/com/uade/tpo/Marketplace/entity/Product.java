@@ -7,33 +7,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
 
 @Entity
-public class User {
-    
-
+public class Product {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @Column
     private String name;
     @Column
-    private String surname;
+    private String description;
     @Column
-    private String email;
+    private float precio;
     @Column
-    private String password;
-    @Column
-    private String address;
-    @Column
-    private int phone;
+    private int stock;
     
+    @ManyToOne 
+    @JoinColumn(name = "id_category", nullable = false)
+    private Category category;
 
-    @OneToMany(mappedBy = "user") //user va a ser FK de tabla de orders
-    private List<Order> orders;
+    @OneToMany(mappedBy = "orderDetail")
+    private List<OrderDetail> orderDetail;
+
 }

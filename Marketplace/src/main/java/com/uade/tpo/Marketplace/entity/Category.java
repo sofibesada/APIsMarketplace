@@ -2,11 +2,15 @@ package com.uade.tpo.Marketplace.entity;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Data //define automaticamente todos los getters y setters de nuestra aplicacion
@@ -26,6 +30,11 @@ public class Category { //tabla
     private Long id; //columna1
 
     @Column
+    private String name;
+    @Column
     private String description; //columna2
+
+    @OneToMany (mappedBy = "products")
+    List<Product> products;
 
 }
