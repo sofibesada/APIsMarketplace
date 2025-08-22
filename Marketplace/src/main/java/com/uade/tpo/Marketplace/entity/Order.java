@@ -33,8 +33,7 @@ public class Order {
     private LocalDateTime date;
     @Column
     private Long total;
-    @Column 
-    private String state;
+   
 
     @ManyToOne //join entre las dos--> esta orden q es de 1 unico usuario se relaciona con esta orden
     @JoinColumn(name = "user_id", nullable = false) //si o si tiene q haber user_id sino ordern no se persiste (para eso nullable q es un booleano) 
